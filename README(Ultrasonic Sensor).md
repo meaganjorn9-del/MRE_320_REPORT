@@ -43,17 +43,55 @@ This report evaluates the performance of the HC-SR04 ultrasonic sensor against m
 
 ![Temperature comparison plot](images/accuracy_plot.png)
 
-*Figure 2: DHT22 vs. reference thermometer over 0-50°C range*
+4.2 Material Sensitivity Results
+*Figure 3: HC-SR04 performance on different surface types at ~44 cm distance*
 
-| Temperature | DHT22 Reading | Reference | Error |
-|-------------|---------------|-----------|-------|
-| 0°C | 0.8°C | 0.0°C | +0.8°C |
-| 25°C | 25.3°C | 25.0°C | +0.3°C |
-| 50°C | 51.2°C | 50.0°C | +1.2°C |
+Object	Surface Type	Sensor Reading (Range)	Result
+Book	Flat, solid, paper	44.32 – 44.78 cm	✅ Pass
+Purple Vase	Curved, smooth, ceramic	43.61 – 44.08 cm	✅ Pass
+Seashell Vase	Complex, irregular, porous	2306.06 – 2306.83 cm	❌ Fail
+Hairspray Can	Narrow cylinder, metal	2305.47 – 2308.32 cm	❌ Fail
 
-### 4.2 Response Time
-- 63% response time: 12 seconds
-- 90% response time: 35 seconds
+4.3 Precision Analysis
+Figure 4: Measurement variability at each test distance
+
+Test Distance	Sample Count	Mean Reading	Standard Deviation	Variance
+15.88 cm	9	15.95 cm	±0.18 cm	0.03 cm²
+36.83 cm	10	35.84 cm	±0.05 cm	0.0025 cm²
+85.73 cm	9	84.65 cm	±0.35 cm	0.12 cm²
+314.00 cm*	4	314.02 cm	±1.52 cm	2.31 cm²
+*Excluding timeout errors
+
+4.4 Failure Mode Analysis
+Figure 5: Timeout values observed during testing
+
+Condition	Observed Reading	Theoretical Maximum	Error Type
+No echo (soft surface)	2306.06 – 2306.83 cm	2308 cm	Sensor timeout
+No echo (narrow object)	2305.47 – 2308.32 cm	2308 cm	Sensor timeout
+Out of range (>400 cm)	2308.22 – 2308.92 cm	2308 cm	Sensor timeout
+
+4.5 Spec Sheet Verification
+Figure 6: Manufacturer specifications vs. test results
+
+Parameter	Manufacturer Claim	Test Result	Verdict
+Operating Range	2 – 400 cm	15 – 314 cm verified	✅ Pass
+Accuracy	±3 mm	0.7 – 10.8 mm observed	⚠️ Partial*
+Operating Frequency	40 kHz	Assumed correct	✅ Pass
+Material Sensitivity	Not specified	Fails on irregular surfaces	⚠️ Limitation identified
+*Accuracy within spec for flat surfaces at close range; deviates at mid-range and extreme distances
+
+4.6 Summary Statistics
+Figure 7: Combined performance metrics
+
+Metric	Value	Notes
+Best Accuracy	±0.07 cm	At 15.88 cm distance
+Worst Accuracy	±1.08 cm	At 85.73 cm distance
+Best Precision	±0.05 cm	At 36.83 cm distance
+Worst Precision	±1.52 cm	At 314.00 cm distance*
+Success Rate (Flat)	100%	Book, vase, wall targets
+Success Rate (Complex)	0%	Seashells, hairspray can
+
+
 
 ## 5. Discussion
 The HC-SR04 demonstrates excellent precision and meets its ±3mm accuracy specification when detecting solid, flat objects. However, the sensor's performance is highly dependent on target characteristics. Soft, porous, or geometrically complex surfaces scatter or absorb the ultrasonic waves, preventing the echo from returning to the receiver. In these failure cases, the microcontroller timer runs until it times out, resulting in false readings near 2308 cm (the maximum distance calculable based on the 38ms timeout period). This behavior is not detailed in the basic spec sheet and represents a critical limitation for general-purpose use. The sensor shows a consistent underestimation of approximately 1 cm in the 35-85 cm range, suggesting a systematic offset that could be calibrated in software.
