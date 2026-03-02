@@ -29,6 +29,17 @@ This report evaluates the performance of the HC-SR04 ultrasonic sensor against m
 ![Setup photo](images/test_setup.jpg)
 ## 4. Results
 ### 4.1 Accuracy Comparison
+*Figure 2: HC-SR04 vs. reference distance over 15-314 cm range*
+
+|Actual Distance	Sensor Reading (Avg)|	Reference| Distance|	Error|
+|--------|--------|---------|-------|
+|15.88 cm	|15.95 cm	|15.88 cm	|+0.07 cm|
+|36.83 cm	|35.84 cm	|36.83 cm	|-0.99 cm|
+|85.73 cm	|84.65 cm	|85.73 cm	|-1.08 cm|
+|314.00 cm*|	314.02 |cm	314.00 cm|+0.02 cm|
+
+**Excluding timeout errors; 50% of readings at this distance were false timeouts (~2308 cm)*
+
 
 ![Temperature comparison plot](images/accuracy_plot.png)
 
