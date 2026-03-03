@@ -87,14 +87,14 @@ Figure 6: Manufacturer specifications vs. test results
 4.6 Summary Statistics
 Figure 7: Combined performance metrics
 
-|Metric	Value	Notes|
-|---------|
-|Best Accuracy	±0.07 cm	At 15.88 cm distance|
-|Worst Accuracy	±1.08 cm	At 85.73 cm distance|
-|Best Precision	±0.05 cm	At 36.83 cm distance|
-|Worst Precision	±1.52 cm	At 314.00 cm distance*|
-|Success Rate (Flat)	100%	Book, vase, wall targets|
-|Success Rate (Complex)	0%	Seashells, hairspray can|
+|Metric|Value|Notes|
+|---------|---------|---------|
+|Best Accuracy|	±0.07 cm|	At 15.88 cm distance|
+|Worst Accuracy	|±1.08 cm	|At 85.73 cm distance|
+|Best Precision|	±0.05 cm|	At 36.83 cm distance|
+|Worst Precision|	±1.52 cm|	At 314.00 cm distance*|
+|Success Rate (Flat)|	100%	|Book, vase, wall targets|
+|Success Rate (Complex)|	0%	|Seashells, hairspray can|
 
 
 
