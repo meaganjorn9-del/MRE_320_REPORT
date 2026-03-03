@@ -94,7 +94,7 @@ Figure 7: Combined performance metrics
 |Best Precision|	±0.05 cm|	At 36.83 cm distance|
 |Worst Precision|	±1.52 cm|	At 314.00 cm distance*|
 |Success Rate (Flat)|	100%	|Book, vase, wall targets|
-|Success Rate (Complex)|	0%	|Seashells, hairspray can|
+|Success Rate (Complex)|0%|Seashells, hairspray can|
 
 
 
