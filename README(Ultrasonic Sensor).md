@@ -26,7 +26,7 @@ This report evaluates the performance of the HC-SR04 ultrasonic sensor against m
 - Communication: Digital pulse timing (trigger/echo pins)
 - Test Distances: 15.88 cm, 36.83 cm, 85.73 cm, 314.00 cm
 
-![Setup photo](images/test_setup.jpg)
+
 ## 4. Results
 ### 4.1 Accuracy Comparison
 *Figure 2: HC-SR04 vs. reference distance over 15-314 cm range*
@@ -41,55 +41,60 @@ This report evaluates the performance of the HC-SR04 ultrasonic sensor against m
 **Excluding timeout errors; 50% of readings at this distance were false timeouts (~2308 cm)*
 
 
-![Temperature comparison plot](images/accuracy_plot.png)
-
 4.2 Material Sensitivity Results
 *Figure 3: HC-SR04 performance on different surface types at ~44 cm distance*
 
-Object	Surface Type	Sensor Reading (Range)	Result
-Book	Flat, solid, paper	44.32 – 44.78 cm	✅ Pass
-Purple Vase	Curved, smooth, ceramic	43.61 – 44.08 cm	✅ Pass
-Seashell Vase	Complex, irregular, porous	2306.06 – 2306.83 cm	❌ Fail
-Hairspray Can	Narrow cylinder, metal	2305.47 – 2308.32 cm	❌ Fail
+|Object|	Surface Type|	Sensor Reading (Range)|	Result|
+|--------|--------|---------|-------|
+|Book	Flat| solid, paper	|44.32 – 44.78 cm|	✅ Pass|
+|Purple Vase	Curved|smooth, ceramic|	43.61 – 44.08 cm|	✅ Pass|
+|Seashell Vase	Complex|irregular, porous	|2306.06 – 2306.83 cm	|❌ Fail|
+|Hairspray Can	Narrow cylinder| metal|	2305.47 – 2308.32 cm|	❌ Fail|
 
 4.3 Precision Analysis
 Figure 4: Measurement variability at each test distance
 
-Test Distance	Sample Count	Mean Reading	Standard Deviation	Variance
-15.88 cm	9	15.95 cm	±0.18 cm	0.03 cm²
-36.83 cm	10	35.84 cm	±0.05 cm	0.0025 cm²
-85.73 cm	9	84.65 cm	±0.35 cm	0.12 cm²
-314.00 cm*	4	314.02 cm	±1.52 cm	2.31 cm²
+|Test Distance	|Sample Count|	Mean Reading|	Standard Deviation|	Variance|
+|--------|--------|---------|-------|--------|
+|15.88 cm	|9|	15.95 cm|	±0.18 cm|	0.03 cm²|
+|36.83 cm	|10|	35.84 cm|	±0.05 cm|	0.0025 cm²|
+|85.73 cm	|9|	84.65 cm|	±0.35 cm|	0.12 cm²|
+|314.00 cm*|	4	|314.02 cm|	±1.52 cm|	2.31 cm²|
+
 *Excluding timeout errors
 
 4.4 Failure Mode Analysis
 Figure 5: Timeout values observed during testing
 
-Condition	Observed Reading	Theoretical Maximum	Error Type
-No echo (soft surface)	2306.06 – 2306.83 cm	2308 cm	Sensor timeout
-No echo (narrow object)	2305.47 – 2308.32 cm	2308 cm	Sensor timeout
-Out of range (>400 cm)	2308.22 – 2308.92 cm	2308 cm	Sensor timeout
+|Condition|	Observed Reading|	Theoretical| Maximum	Error Type|
+|--------|--------|---------|-------|
+|No echo (soft surface)	|2306.06 – 2306.83 cm	|2308 cm|	Sensor timeout|
+|No echo (narrow object)|	2305.47 – 2308.32 cm|	2308 cm	|Sensor timeout|
+|Out of range (>400 cm)	|2308.22 – 2308.92 cm	|2308 cm	|Sensor timeout|
 
 4.5 Spec Sheet Verification
 Figure 6: Manufacturer specifications vs. test results
 
-Parameter	Manufacturer Claim	Test Result	Verdict
-Operating Range	2 – 400 cm	15 – 314 cm verified	✅ Pass
-Accuracy	±3 mm	0.7 – 10.8 mm observed	⚠️ Partial*
-Operating Frequency	40 kHz	Assumed correct	✅ Pass
-Material Sensitivity	Not specified	Fails on irregular surfaces	⚠️ Limitation identified
+|	Parameter	Manufacturer Claim|	Test Result	Verdict|	
+|---------|-------|
+|	Operating Range	2 – 400 cm	15 – 314 cm verified	|	✅ Pass|	
+|	Accuracy	±3 mm	0.7 – 10.8 mm observed|		⚠️ Partial*|	
+|	Operating Frequency	40 kHz	Assumed correct|		✅ Pass|	
+|	Material Sensitivity	Not specified	Fails on irregular surfaces|⚠️ Limitation identified|	
+
 *Accuracy within spec for flat surfaces at close range; deviates at mid-range and extreme distances
 
 4.6 Summary Statistics
 Figure 7: Combined performance metrics
 
-Metric	Value	Notes
-Best Accuracy	±0.07 cm	At 15.88 cm distance
-Worst Accuracy	±1.08 cm	At 85.73 cm distance
-Best Precision	±0.05 cm	At 36.83 cm distance
-Worst Precision	±1.52 cm	At 314.00 cm distance*
-Success Rate (Flat)	100%	Book, vase, wall targets
-Success Rate (Complex)	0%	Seashells, hairspray can
+|Metric	Value	Notes|
+|---------|
+|Best Accuracy	±0.07 cm	At 15.88 cm distance|
+|Worst Accuracy	±1.08 cm	At 85.73 cm distance|
+|Best Precision	±0.05 cm	At 36.83 cm distance|
+|Worst Precision	±1.52 cm	At 314.00 cm distance*|
+|Success Rate (Flat)	100%	Book, vase, wall targets|
+|Success Rate (Complex)	0%	Seashells, hairspray can|
 
 
 
