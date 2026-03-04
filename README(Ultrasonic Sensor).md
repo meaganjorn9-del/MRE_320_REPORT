@@ -112,6 +112,8 @@ Calibration: Consider applying distance-dependent correction factors to improve 
 
 
 ## 7. References and Appendices
-- Appendix A: 
-- Appendix B: 
-- Appendix C:      
+- Appendix A: Raw data files (accuracy testing: 15.88 cm, 36.83 cm, 85.73 cm, 314.00 cm)
+- Appendix B: Raw data files (material testing: book, purple vase, seashell vase, hairspray can)
+- Appendix C: Manufacturer datasheet (HC-SR04)
+
+
