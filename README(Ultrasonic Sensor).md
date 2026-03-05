@@ -39,6 +39,10 @@ This report evaluates the performance of the HC-SR04 ultrasonic sensor against m
 |314.00 cm*|	314.02 |cm	314.00 cm|+0.02 cm|
 
 **Excluding timeout errors; 50% of readings at this distance were false timeouts (~2308 cm)*
+<img width="742" height="422" alt="image" src="https://github.com/user-attachments/assets/99fecac5-4979-4f47-8adc-416586d77555" />
+<img width="564" height="398" alt="image" src="https://github.com/user-attachments/assets/367fe20e-7118-4263-ad44-e71e1fdf73e1" />
+<img width="554" height="388" alt="image" src="https://github.com/user-attachments/assets/1a0a3bd5-2487-49b4-90ad-f5c9365a0b41" />
+<img width="568" height="384" alt="image" src="https://github.com/user-attachments/assets/722a4ea2-a1b6-4069-9288-c231b2b66efb" />
 
 
 4.2 Material Sensitivity Results
@@ -50,6 +54,7 @@ This report evaluates the performance of the HC-SR04 ultrasonic sensor against m
 |Purple Vase	Curved|smooth, ceramic|	43.61 – 44.08 cm|	✅ Pass|
 |Seashell Vase	Complex|irregular, porous	|2306.06 – 2306.83 cm	|❌ Fail|
 |Hairspray Can	Narrow cylinder| metal|	2305.47 – 2308.32 cm|	❌ Fail|
+<img width="1208" height="734" alt="image" src="https://github.com/user-attachments/assets/1824d04c-3838-4879-a6e6-940cdae8521d" />
 
 4.3 Precision Analysis
 Figure 4: Measurement variability at each test distance
@@ -83,6 +88,7 @@ Figure 6: Manufacturer specifications vs. test results
 |	Material Sensitivity	Not specified	Fails on irregular surfaces|⚠️ Limitation identified|	
 
 *Accuracy within spec for flat surfaces at close range; deviates at mid-range and extreme distances
+<img width="1382" height="608" alt="image" src="https://github.com/user-attachments/assets/8fc41ca1-dfdb-4931-ab66-357257f5fb07" />
 
 4.6 Summary Statistics
 Figure 7: Combined performance metrics
@@ -95,7 +101,6 @@ Figure 7: Combined performance metrics
 |Worst Precision|	±1.52 cm|	At 314.00 cm distance*|
 |Success Rate (Flat)|	100%	|Book, vase, wall targets|
 |Success Rate (Complex)|0%|Seashells, hairspray can|
-
 
 
 ## 5. Discussion
