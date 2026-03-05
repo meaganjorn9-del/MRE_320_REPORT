@@ -116,9 +116,15 @@ Implementation Notes: Software filtering (median or moving average) is recommend
 Calibration: Consider applying distance-dependent correction factors to improve absolute accuracy
 
 
-## 7. References and Appendices
+## 7. Ultrasonic Sensor Code
+https://app.arduino.cc/sketches/d7794dee-d8ee-43a1-bde4-57c255753e23?view-mode=preview 
+
+
+## 8. Ultrasonic Sensor Wiring Diagram
+<img width="209" height="214" alt="Ultrasonic Sensor Wiring Diagram" src="https://github.com/user-attachments/assets/2932bd77-46d7-4d04-a52e-170372e36261" />
+
+## 9. References and Appendices
 - Appendix A: Raw data files (accuracy testing: 15.88 cm, 36.83 cm, 85.73 cm, 314.00 cm)
 - Appendix B: Raw data files (material testing: book, purple vase, seashell vase, hairspray can)
 - Appendix C: Manufacturer datasheet (HC-SR04)
-
 
