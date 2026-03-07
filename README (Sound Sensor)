@@ -1,1 +1,77 @@
-
+Sound Sensor Characterization
+Overview
+This project evaluates the performance characteristics of a sound sensor by comparing measured sound levels with known reference sound levels. The goal was to determine:
+Sensor sensitivity
+Measurement accuracy
+Operating range
+Relationship between RMS output and sound pressure level (dB)
+The sensor was tested using controlled audio signals and measurements were recorded for analysis.
+Experimental Setup
+Reference Conditions
+Silent room baseline: ~40 dB
+Calibration signal: 1 kHz tone at 70 dB
+During calibration:
+70 dB → RMS = 1
+This calibration point was used to normalize the RMS measurements from the sensor.
+RMS Response vs Sound Level
+Measured relationship between sound level (dB) and sensor RMS output:
+Sound Level (dB)	RMS Output
+60	0.5
+65	0.6
+70	1.0
+75	1.8
+80	2.3
+85	4.5
+Observation
+Below 60 dB, the RMS readings became inconsistent, indicating reduced sensor reliability near the lower detection limit.
+Accuracy Testing
+Average sensor outputs were calculated from 10 samples at each reference sound level.
+Input dB	Sensor Output (dB)	Error (dB)
+60	60.23	+0.23
+65	65.17	+0.17
+70	67.74	-2.26
+75	74.15	-0.85
+80	79.45	-0.55
+85	85.54	+0.54
+90	92.64	+2.64
+95	98.94	+3.94
+100	106.56	+6.56
+Sensor Sensitivity
+Estimated sensitivity values were calculated for each measurement:
+Input dB	Sensitivity
+65	1.01
+70	1.95
+75	0.78
+80	0.94
+85	0.82
+90	0.70
+95	0.79
+100	0.66
+Sensitivity tends to decrease at higher sound levels, indicating increasing nonlinearity.
+Operating Range
+Estimated usable sensor range:
+Minimum reliable detection: ~60 dB
+Maximum tested level: ~95–100 dB
+Below 60 dB, measurements become inconsistent.
+Above 90 dB, the sensor begins to overestimate sound levels.
+Key Findings
+1. Linear region
+The sensor performs best between:
+65 dB – 85 dB
+Errors in this region remain relatively small.
+2. Low-level instability
+Below 60 dB, RMS output fluctuates and cannot reliably represent sound level.
+3. High-level overestimation
+Above 90 dB, the sensor increasingly overestimates actual sound levels.
+4. Calibration effectiveness
+Using 70 dB → RMS = 1 provides a reasonable calibration reference for mid-range measurements.
+Conclusion
+The tested sound sensor provides reliable measurements within the approximate range:
+60 dB – 90 dB
+Within this region, measurement error remains relatively low. Outside this range, the sensor exhibits:
+Reduced stability at low sound levels
+Increasing error at high sound levels
+Future improvements could include:
+Multi-point calibration
+Noise filtering
+Sensor linearization
